@@ -23,7 +23,7 @@ public class Search_files {
 	
 	// Searching in the repository if the file is missing or not
 	public boolean findSearch(String filename) {
-		File fichier = new File(path_to_file + "\\" + filename);
+		File fichier = new File(filename);
 		return fichier.exists();
 	}
 
@@ -34,7 +34,7 @@ public class Search_files {
 		String separator = " ";
 		
 		try {
-			FileReader reader = new FileReader(path_to_file + "\\" + filename);
+			FileReader reader = new FileReader(path_to_file + "/" + filename);
 		
 			BufferedReader breader = new BufferedReader(reader);
 		

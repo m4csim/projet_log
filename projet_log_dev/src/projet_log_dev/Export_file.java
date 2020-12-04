@@ -16,7 +16,7 @@ public class Export_file {
 	
 	// Generate a file with the data askde by the user
 	public void generate_file(String name,String core) throws IOException {
-		BufferedWriter writer = new BufferedWriter(new FileWriter(path_to_file + "/" + name + ".txt"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter(name + ".txt"));
 		writer.write(core);
 		writer.close();
 	}
