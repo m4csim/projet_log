@@ -28,7 +28,23 @@ public class Statistics {
 	}
 	
 	public HashMap<String,Integer> get10FirstIpHits() {
-		return null;
+		HashMap<String,Integer> IpHits = new HashMap<String,Integer>();
+		
+		for(int i = 0;i<DataList.size();i++) {
+			
+			for (String s : IpHits.keySet()) {
+				
+				if(DataList.get(i).getIP_adress() == s) {
+					IpHits.put(s,IpHits.get(s) + 1);
+				}
+				else {
+					IpHits.put(DataList.get(i).getIP_adress(),1);
+				}				
+			}			
+		}
+		
+		
+		return IpHits;
 	}
 	
 	public HashMap<String,Integer> get10firstIpKo() {

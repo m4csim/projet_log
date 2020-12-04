@@ -27,20 +27,20 @@ public class Search_files {
 		return fichier.exists();
 	}
 
-	public ArrayList<Line_of_Data> createDataList() throws IOException{
+	public ArrayList<Line_of_Data> createDataList(String filename) throws IOException{
 		ArrayList<Line_of_Data> DataList = new ArrayList<Line_of_Data>();
 		String line;
 		Line_of_Data Dataline;
-		String separator = ",";
+		String separator = " ";
 		
 		try {
-			FileReader reader = new FileReader(path_to_file);
+			FileReader reader = new FileReader(path_to_file + "\\" + filename);
 		
 			BufferedReader breader = new BufferedReader(reader);
 		
 			while((line = breader.readLine()) != null) {
 				String SplittedLine[] = line.split(separator);
-				if (SplittedLine.length < 6) {
+				if (SplittedLine.length >= 6) {
 					Dataline = new Line_of_Data(SplittedLine[0],SplittedLine[1],SplittedLine[2],SplittedLine[3],SplittedLine[4],SplittedLine[5]);
 					DataList.add(Dataline);
 				}
