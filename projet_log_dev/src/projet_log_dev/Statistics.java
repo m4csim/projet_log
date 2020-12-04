@@ -9,9 +9,11 @@ public class Statistics {
 	public Statistics(ArrayList<Line_of_Data> Datalist) {
 		super();
 		this.DataList = Datalist;
+		System.out.println("Statistics in progress ...");
 	}
 	
-	public int getNbAdIP() {
+	public String getNbAdIP() {
+		String retour = "";
 		int res = 0;
 		
 		for(int i = 0;i<DataList.size();i++) {
@@ -24,7 +26,8 @@ public class Statistics {
 				}
 			}
 		}
-		return res;
+		retour = "Numbers of different Ip address : " + String.valueOf(res);
+		return retour;
 	}
 	
 	public HashMap<String,Integer> get10FirstIpHits() {

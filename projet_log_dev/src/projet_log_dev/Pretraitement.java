@@ -29,7 +29,7 @@ public class Pretraitement {
 
 	    try
 	      {
-		lecteurAvecBuffer = new BufferedReader(new FileReader("/Users/nouveau/log.txt"));
+		lecteurAvecBuffer = new BufferedReader(new FileReader("C:\\Log\\LogServ\\log.txt"));
 	      }
 	    catch(FileNotFoundException exc)
 	      {

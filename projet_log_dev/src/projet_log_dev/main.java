@@ -6,23 +6,21 @@ import java.util.ArrayList;
 public class main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated constructor stub
-		//try {
-			//Pretraitement.traitement();
-		//} catch (IOException e) {
-			// TODO Auto-generated catch block
-	//		e.printStackTrace();
-		//}
 		try {
+			//Pretraitement.traitement();
+			
 			ArrayList<Line_of_Data> Dl;
 			Statistics Stat;
-			Search_files Sl = new Search_files("C:\\Log");
-			if (Sl.findSearch("fic_log_ISS.txt")) {
-				System.out.println("ui");	
-				Dl = Sl.createDataList("fic_log_ISS.txt");
+			String ficname = "FIC_PRE.TXT";
+			Search_files Sl = new Search_files("C:\\Log\\LogTraite");
+			Export_file Ef = new Export_file("c:\\Log\\LogStat");
+			if (Sl.findSearch(ficname)) {
+				
+				Dl = Sl.createDataList(ficname);
 				//System.out.println(Dl.get(0).getProtocol());
 				Stat = new Statistics(Dl);
-				System.out.println("Nombr d'ip diff : " + Stat.getNbAdIP());
+				Ef.generate_file("Log_Stat",Stat.getNbAdIP());
+				System.out.println("File created");	
 			}
 			else {
 				System.out.println("non");
